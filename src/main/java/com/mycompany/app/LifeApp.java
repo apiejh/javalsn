@@ -15,7 +15,7 @@ public class LifeApp {
         for (Person p: people) {
             for (int i = 0; i < 50; i++) {
                 String firstLetter = String.valueOf(p.getName().charAt(0));
-                if (firstLetter == "J") {
+                if ((firstLetter).equals("J")) {
                     p.growOld();
                     p.growOld();
                 } else {
