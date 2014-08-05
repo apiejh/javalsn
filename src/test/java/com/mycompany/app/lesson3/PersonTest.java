@@ -14,7 +14,7 @@ public class PersonTest {
 
     @Before
     public void setUp() throws Exception {
-        person1 = new Person("John Rambo", "email@example.com", 22);
+        person1 = createPersonWithNameAndAge("John Rambo", 22);
         person2 = new Person("Adrianne Rambo", "email@example.com", 22);
     }
 
@@ -25,23 +25,52 @@ public class PersonTest {
     }
 
     @Test
+    public void AgeShouldReturnCurrentAge() {
+        Person person = createPersonWithAge(22);
+        Assert.assertEquals(22, person.Age(0));
+    }
+
+    @Test
     public void shouldStoreAge() {
-        Assert.assertEquals(22, person1.getAge());
+        Person person = createPersonWithAge(32);
+        Assert.assertEquals(32, person.getAge());
+    }
+
+    @Test
+    public void shouldCreatePersonWithNameOnly() {
+        Person person = Person.createWithName("Gina");
+        Assert.assertEquals("Gina", person.getName());
+    }
+
+    @Test
+    public void shouldCreatePersonWithNameOnlyIsZeroYearsOld() {
+        Person person = Person.createWithName("Paul");
+        Assert.assertEquals(0, person.getAge());
     }
 
     @Test
     public void shouldStoreName() {
-        Assert.assertEquals("John Rambo", person1.getName());
+        Person person = Person.createWithName("Stefan");
+        Assert.assertEquals("Stefan", person.getName());
     }
 
     @Test
     public void shouldAgeTwiceAsFarWhenNameStartsWithJ() {
+        person1 = createPersonWithNameAndAge("John", 22);
         Assert.assertEquals(42, person1.Age(10));
     }
 
     @Test
     public void shouldAgeNormallyWhenNameDoesNotStartsWithJ() {
         Assert.assertEquals(32, person2.Age(10));
+    }
+
+    private Person createPersonWithNameAndAge(String name, int age) {
+        return new Person(name, "email@example.com", age);
+    }
+
+    private Person createPersonWithAge(int age) {
+        return createPersonWithNameAndAge("John", age);
     }
 
 }

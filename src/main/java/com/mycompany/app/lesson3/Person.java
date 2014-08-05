@@ -41,11 +41,16 @@ public class Person {
 
     public int Age(int aging) {
         if (getFirstLetter().equals("J")) {
-            return age + aging * 2;
+           this.age = this.age + aging * 2;
+
         }
         else {
-            return age + aging;
+            this.age = this.age + aging;
         }
+        return this.age;
     }
 
+    public static Person createWithName(String name) {
+        return new Person(name, 0);
+    }
 }
