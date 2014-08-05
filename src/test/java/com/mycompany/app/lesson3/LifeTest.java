@@ -1,5 +1,8 @@
 package com.mycompany.app.lesson3;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 /**
  * Created by grzegorzaperlinski on 29.07.2014.
  */
@@ -9,4 +12,13 @@ public class LifeTest {
     getter pobierajacy persony
     getter pobierajacy sume lat
     */
+    @Test
+    public void shouldGetPerson() {
+
+    }
+
+
+
+
+
 }
