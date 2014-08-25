@@ -40,4 +40,13 @@ public class AccountantTest {
 
         Assert.assertEquals(18, accountant.getWalletBalance());
     }
+
+    @Test
+    public void shouldBeAbleToReceiveBonus() {
+        Accountant accountant = new Accountant(20);
+
+        accountant.receiveBonus();
+
+        Assert.assertEquals(80, accountant.getWalletBalance());
+    }
 }

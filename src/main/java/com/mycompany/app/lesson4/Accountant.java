@@ -22,4 +22,9 @@ public class Accountant {
     public void getPaid(int pay) {
         walletBalance = walletBalance + pay;
     }
+
+
+    public void receiveBonus() {
+        walletBalance = walletBalance + wage * 4;
+    }
 }

@@ -13,4 +13,8 @@ public class Finance {
         int money = accountant.getWage() * 8;
         accountant.getPaid(money);
     }
+
+    public void giveBonus(Accountant accountant) {
+        accountant.receiveBonus();
+    }
 }

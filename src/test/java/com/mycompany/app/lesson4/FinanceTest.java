@@ -45,4 +45,14 @@ public class FinanceTest {
 
         Assert.assertEquals(320, accountant.getWalletBalance());
     }
+
+    @Test
+    public void shouldGiveBonusToAccountant() {
+        Accountant accountant = new Accountant(10);
+        Finance finance = new Finance();
+
+        finance.giveBonus(accountant);
+
+        Assert.assertEquals(40, accountant.getWalletBalance());
+    }
 }
