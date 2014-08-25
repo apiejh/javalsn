@@ -8,4 +8,9 @@ public class Finance {
         int money = miner.getWage() * 8;
         miner.getPaid(money);
     }
+
+    public void payDailyWage(Accountant accountant) {
+        int money = accountant.getWage() * 8;
+        accountant.getPaid(money);
+    }
 }

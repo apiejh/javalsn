@@ -17,6 +17,16 @@ public class FinanceTest {
     }
 
     @Test
+    public void shouldPayAccountant() {
+        Accountant accountant = new Accountant(20);
+        Finance finance = new Finance();
+
+        finance.payDailyWage(accountant);
+
+        Assert.assertEquals(160, accountant.getWalletBalance());
+    }
+
+    @Test
     public void shouldPayMinerBasedOnWage() {
         Miner miner = new Miner(7);
         Finance finance = new Finance();
@@ -24,5 +34,15 @@ public class FinanceTest {
         finance.payDailyWage(miner);
 
         Assert.assertEquals(56, miner.getWalletBalance());
+    }
+
+    @Test
+    public void shouldPayAccountantBasedOnWage() {
+        Accountant accountant = new Accountant(40);
+        Finance finance = new Finance();
+
+        finance.payDailyWage(accountant);
+
+        Assert.assertEquals(320, accountant.getWalletBalance());
     }
 }
