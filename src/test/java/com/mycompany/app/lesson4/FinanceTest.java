@@ -55,4 +55,5 @@ public class FinanceTest {
 
         Assert.assertEquals(40, accountant.getWalletBalance());
     }
+
 }

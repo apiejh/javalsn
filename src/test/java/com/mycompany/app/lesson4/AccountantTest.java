@@ -23,30 +23,31 @@ public class AccountantTest {
     }
 
     @Test
-    public void shouldFillWallet() {
-        Accountant accountant = new Accountant(45);
-
-        accountant.getPaid(10);
-
-        Assert.assertEquals(10, accountant.getWalletBalance());
-    }
-
-    @Test
-    public void shouldAddUpPay() {
-        Accountant accountant = new Accountant(15);
-
-        accountant.getPaid(10);
-        accountant.getPaid(8);
-
-        Assert.assertEquals(18, accountant.getWalletBalance());
-    }
-
-    @Test
     public void shouldBeAbleToReceiveBonus() {
         Accountant accountant = new Accountant(20);
 
         accountant.receiveBonus();
 
         Assert.assertEquals(80, accountant.getWalletBalance());
+    }
+
+    @Test
+    public void shouldReceivePaymentBasedOnHoursAndWage() {
+        Accountant accountant = new Accountant(20);
+
+        accountant.receivePayment(8);
+
+        Assert.assertEquals(160, accountant.getWalletBalance());
+    }
+
+    @Test
+    public void shouldReceiveMultiplePaymentsBasedOnHoursAndWage() {
+        Accountant accountant = new Accountant(10);
+
+        accountant.receivePayment(8);
+        accountant.receivePayment(8);
+        accountant.receivePayment(8);
+
+        Assert.assertEquals(240, accountant.getWalletBalance());
     }
 }

@@ -19,7 +19,7 @@ public class Miner {
         return walletBalance;
     }
 
-    public void getPaid(int pay) {
-        walletBalance = walletBalance + pay;
+    public void receivePayment(int hours) {
+        walletBalance += wage * hours;
     }
 }

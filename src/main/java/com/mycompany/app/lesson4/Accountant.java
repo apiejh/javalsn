@@ -27,4 +27,8 @@ public class Accountant {
     public void receiveBonus() {
         walletBalance = walletBalance + wage * 4;
     }
+
+    public void receivePayment(int hours) {
+        walletBalance += hours * wage;
+    }
 }

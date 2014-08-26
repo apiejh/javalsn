@@ -23,21 +23,21 @@ public class MinerTest {
     }
 
     @Test
-    public void shouldFillWallet() {
-        Miner miner = new Miner(20);
+    public void shouldReceivePaymentBasedOnHoursAndWage() {
+        Miner miner = new Miner(10);
 
-        miner.getPaid(10);
+        miner.receivePayment(8);
 
-        Assert.assertEquals(10, miner.getWalletBalance());
+        Assert.assertEquals(80, miner.getWalletBalance());
     }
 
     @Test
-    public void shouldAddUpPay() {
-        Miner miner = new Miner(15);
+    public void shouldReceiveMultiplePaymentsBasedOnHoursAndWage() {
+        Miner miner = new Miner(12);
 
-        miner.getPaid(10);
-        miner.getPaid(8);
+        miner.receivePayment(10);
+        miner.receivePayment(5);
 
-        Assert.assertEquals(18, miner.getWalletBalance());
+        Assert.assertEquals(180, miner.getWalletBalance());
     }
 }
